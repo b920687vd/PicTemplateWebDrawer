@@ -1,0 +1,37 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@": [
+                "./src"
+            ],
+            "@/*": [
+                "./src/*"
+            ],
+        },
+        "outDir": "./build/",
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "jsx": "react",
+        "allowJs": true,
+        "sourceMap": true,
+        "lib": [
+            "dom",
+            "es2015",
+            "es2015.promise"
+        ],
+        "resolveJsonModule": true,
+        // for ash
+        "target": "es5",
+        "suppressImplicitAnyIndexErrors": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+    "files":[
+        "libs/url-loader.d.ts",
+    ],
+    "include": [
+        "src/*",
+    ],
+}
