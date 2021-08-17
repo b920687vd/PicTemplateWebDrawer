@@ -16,22 +16,24 @@
   display: none;
 }
 
-.questionBlock textarea {
+.questionBlock .textField {
   margin-top: 20px;
   padding: 30px;
   width: 1150px;
   font-size: 36px;
   line-height: 36px;
+  background-color: #ffffff;
+  color: #000000;
 }
 
-.questionBlock.muti textarea {
+.questionBlock.muti .textField {
   height: 400px;
 }
 
-.questionBlock.single textarea {
+.questionBlock.single .textField {
   height: 80px;
 }
 
-.questionBlock.draw textarea {
+.questionBlock.draw .textField {
   height: 800px;
 }

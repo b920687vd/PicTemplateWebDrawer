@@ -8,10 +8,16 @@ export class Main {
     public ctrlBox:HTMLElement;
 
     public modelBoxBlock:HTMLElement;
+    public inputList:HTMLTextAreaElement[];
+    public inputShowList:HTMLElement[];
     public init(){
         this.outputBox = document.getElementById("outputBox");
         this.ctrlBox = document.getElementById("ctrl");
         this.modelBoxBlock = document.getElementById("model-questionBlock");
+
+        this.inputList = [];
+        this.inputShowList = [];
+
         (window as any).addBlock = ()=>{
             this.addBlock();
         }
@@ -33,10 +39,18 @@ export class Main {
         let newBlock = this.modelBoxBlock.cloneNode(true) as HTMLElement;
         newBlock.className = "questionBlock "+this.getInputData().height;
         newBlock.querySelector(".questionBlock-title").innerHTML = this.getInputData().title;
+        this.inputList.push(newBlock.querySelector("[type=input]"));
+        this.inputShowList.push(newBlock.querySelector("[type=show]"));
         this.outputBox.appendChild(newBlock);
     }
 
     public saveFile(){
+        for(let i in this.inputList){
+            this.inputList[i].className = "textField hidden";
+        }for(let i in this.inputShowList){
+            this.inputShowList[i].innerHTML = this.inputList[i].value;
+            this.inputShowList[i].className = "textField";
+        }
         (html2canvas(document.querySelector("#outputBox")) as Promise<HTMLCanvasElement>).then(canvas => {
             canvas.toBlob(function(blob) {
                 FileSaver.saveAs(blob, "pretty image.png");
