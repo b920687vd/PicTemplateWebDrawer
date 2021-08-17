@@ -1,4 +1,37 @@
-#box {
+.outputBox {
   background-color: #000000;
   color: #ffffff;
+  width: 1280px;
+}
+
+.questionBlock {
+  padding: 40px;
+}
+
+.questionBlock-title {
+  font-size: 42px;
+}
+
+.hidden {
+  display: none;
+}
+
+.questionBlock textarea {
+  margin-top: 20px;
+  padding: 30px;
+  width: 1150px;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.questionBlock.muti textarea {
+  height: 400px;
+}
+
+.questionBlock.single textarea {
+  height: 80px;
+}
+
+.questionBlock.draw textarea {
+  height: 800px;
 }

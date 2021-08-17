@@ -10,8 +10,27 @@
 
 <body>
     <div class="app">
-        <div id="box"></div>
-        <div id="ctrl"></div>
+        <div id="outputBox" class="outputBox">
+            <div id="model-questionBlock" class="questionBlock muti hidden">
+                <div name="model-questionBlock-title" class="questionBlock-title">遗物印象图！</div>
+                <div name="model-questionBlock-input"><textarea></textarea></div>
+            </div>
+        </div>
+        <div id="ctrl">
+            <div>
+                <span>标题</span><input id="ctrl-title-input">
+                <span>高度</span>
+                <select name="height" id="ctrl-height-select">
+                    <option value="single">单行</option>
+                    <option value="muti">多行</option>
+                    <option value="draw">画幅</option>
+                </select>
+                <button onclick=addBlock()>添加</button>
+            </div>
+            <div>
+                <span>导出图片</span><button onclick=saveFile()>导出</button>
+            </div>
+        </div>
     </div>
 </body>
 
