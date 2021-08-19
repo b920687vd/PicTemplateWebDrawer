@@ -7,6 +7,9 @@ export class Main {
     public outputBox:HTMLElement;
     public ctrlBox:HTMLElement;
 
+    public showBox:HTMLElement;
+    public appBox:HTMLElement;
+
     public modelBoxBlock:HTMLElement;
     public inputList:HTMLTextAreaElement[];
     public inputShowList:HTMLElement[];
@@ -52,9 +55,15 @@ export class Main {
             this.inputShowList[i].className = "textField";
         }
         (html2canvas(document.querySelector("#outputBox")) as Promise<HTMLCanvasElement>).then(canvas => {
-            canvas.toBlob(function(blob) {
-                FileSaver.saveAs(blob, "pretty image.png");
-            });
+            let url = canvas.toDataURL();
+            console.log(url);
+            setTimeout(() => {
+                window.open("http://www.baidu.com");
+            },1000)
+            
+            // canvas.toBlob(function(blob) {
+            //     FileSaver.saveAs(blob, "pretty image.png");
+            // });
         });
     }
 }
